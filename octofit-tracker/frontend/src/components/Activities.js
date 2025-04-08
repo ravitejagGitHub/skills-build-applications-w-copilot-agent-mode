@@ -4,7 +4,7 @@ function Activities() {
   const [activities, setActivities] = useState([]);
 
   useEffect(() => {
-    fetch('https://solid-fishstick-q7r57x45vw436xw-8000.app.github.dev/activities/')
+    fetch('https://solid-fishstick-q7r57x45vw436xw-8000.app.github.dev/api/activities/?format=json')
       .then(response => response.json())
       .then(data => setActivities(data))
       .catch(error => console.error('Error fetching activities:', error));

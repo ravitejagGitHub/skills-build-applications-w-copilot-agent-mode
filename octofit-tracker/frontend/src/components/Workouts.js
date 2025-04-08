@@ -4,7 +4,7 @@ function Workouts() {
   const [workouts, setWorkouts] = useState([]);
 
   useEffect(() => {
-    fetch('https://solid-fishstick-q7r57x45vw436xw-8000.app.github.dev/workouts/')
+    fetch('https://solid-fishstick-q7r57x45vw436xw-8000.app.github.dev/api/workouts/?format=json')
       .then(response => response.json())
       .then(data => setWorkouts(data))
       .catch(error => console.error('Error fetching workouts:', error));

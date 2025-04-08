@@ -4,7 +4,7 @@ function Users() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetch('https://solid-fishstick-q7r57x45vw436xw-8000.app.github.dev/users/')
+    fetch('https://solid-fishstick-q7r57x45vw436xw-8000.app.github.dev/api/users/?format=json')
       .then(response => response.json())
       .then(data => setUsers(data))
       .catch(error => console.error('Error fetching users:', error));

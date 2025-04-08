@@ -4,7 +4,7 @@ function Teams() {
   const [teams, setTeams] = useState([]);
 
   useEffect(() => {
-    fetch('https://solid-fishstick-q7r57x45vw436xw-8000.app.github.dev/teams/')
+    fetch('https://solid-fishstick-q7r57x45vw436xw-8000.app.github.dev/api/teams/?format=json')
       .then(response => response.json())
       .then(data => setTeams(data))
       .catch(error => console.error('Error fetching teams:', error));
