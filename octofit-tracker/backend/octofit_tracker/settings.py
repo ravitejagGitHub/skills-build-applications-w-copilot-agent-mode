@@ -26,7 +26,8 @@ SECRET_KEY = "django-insecure-n^&_dt5!rmkxqb4oz+s9kqqqp+&7&v-9^7nb23i4cwq0jx7a_x
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+# Add codespace URL and localhost to allowed hosts
+ALLOWED_HOSTS = ['solid-fishstick-q7r57x45vw436xw-8000.app.github.dev', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -38,7 +39,6 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "corsheaders",
     "octofit_tracker",
 ]
 
@@ -76,16 +76,6 @@ WSGI_APPLICATION = "octofit_tracker.wsgi.application"
 # MongoDB connection setup
 MONGO_CLIENT = pymongo.MongoClient("mongodb://localhost:27017/")
 MONGO_DB = MONGO_CLIENT["octofit_db"]
-
-# Add djongo as the database engine
-DATABASES = {
-    'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'octofit_db',
-        'HOST': 'localhost',
-        'PORT': 27017,
-    }
-}
 
 
 # Password validation
