@@ -77,6 +77,16 @@ WSGI_APPLICATION = "octofit_tracker.wsgi.application"
 MONGO_CLIENT = pymongo.MongoClient("mongodb://localhost:27017/")
 MONGO_DB = MONGO_CLIENT["octofit_db"]
 
+# Add djongo as the database engine
+DATABASES = {
+    'default': {
+        'ENGINE': 'djongo',
+        'NAME': 'octofit_db',
+        'HOST': 'localhost',
+        'PORT': 27017,
+    }
+}
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
